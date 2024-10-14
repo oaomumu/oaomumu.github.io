@@ -1,0 +1,114 @@
+/* 登录页面样式 */
+.login-page {
+    width: 360px; /* 页面宽度 */
+    padding: 8% 0 0; /* 内边距 */
+    margin: auto; /* 自动外边距，居中 */
+}
+
+.form {
+    position: relative; /* 相对定位 */
+    z-index: 1; /* 设置 z 轴顺序 */
+    background: #FFFFFF; /* 背景颜色 */
+    max-width: 360px; /* 最大宽度 */
+    margin: 0 auto 100px; /* 上下外边距 */
+    padding: 45px; /* 内边距 */
+    text-align: center; /* 文本居中 */
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); /* 阴影效果 */
+}
+
+.form input {
+    font-family: "Roboto", sans-serif; /* 字体 */
+    outline: 0; /* 去掉输入框轮廓 */
+    background: #f2f2f2; /* 输入框背景 */
+    width: 100%; /* 宽度 100% */
+    border: 0; /* 去掉边框 */
+    margin: 0 0 15px; /* 下边距 */
+    padding: 15px; /* 内边距 */
+    box-sizing: border-box; /* 包含内边距和边框在内的宽度计算 */
+    font-size: 14px; /* 字体大小 */
+}
+
+.form button {
+    font-family: "Roboto", sans-serif; /* 字体 */
+    text-transform: uppercase; /* 大写字母 */
+    outline: 0; /* 去掉按钮轮廓 */
+    background: #4CAF50; /* 按钮背景颜色 */
+    width: 100%; /* 宽度 100% */
+    border: 0; /* 去掉边框 */
+    padding: 15px; /* 内边距 */
+    color: #FFFFFF; /* 文字颜色 */
+    font-size: 14px; /* 字体大小 */
+    transition: all 0.3s ease; /* 过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示手型光标 */
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #43A047; /* 鼠标悬停、点击或聚焦时的背景颜色 */
+}
+
+.form .message {
+    margin: 15px 0 0; /* 上边距 */
+    color: #b3b3b3; /* 文字颜色 */
+    font-size: 12px; /* 字体大小 */
+}
+
+.form .message a {
+    color: #4CAF50; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.form .register-form {
+    display: none; /* 默认隐藏注册表单 */
+}
+
+.container {
+    position: relative; /* 相对定位 */
+    z-index: 1; /* 设置 z 轴顺序 */
+    max-width: 300px; /* 最大宽度 */
+    margin: 0 auto; /* 自动外边距，居中 */
+}
+
+.container:before,
+.container:after {
+    content: ""; /* 伪元素内容 */
+    display: block; /* 伪元素为块级元素 */
+    clear: both; /* 清除浮动 */
+}
+
+.container .info {
+    margin: 50px auto; /* 上下外边距 */
+    text-align: center; /* 文本居中 */
+}
+
+.container .info h1 {
+    margin: 0 0 15px; /* 上下外边距 */
+    padding: 0; /* 去掉内边距 */
+    font-size: 36px; /* 字体大小 */
+    font-weight: 300; /* 字体粗细 */
+    color: #1a1a1a; /* 文字颜色 */
+}
+
+.container .info span {
+    color: #4d4d4d; /* 文字颜色 */
+    font-size: 12px; /* 字体大小 */
+}
+
+.container .info span a {
+    color: #000000; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.container .info span .fa {
+    color: #EF3B3A; /* 图标颜色 */
+}
+
+body {
+    background: #76b852; /* 旧版浏览器的背景色 */
+    background: rgb(141, 194, 111); /* 背景色 */
+    background: linear-gradient(90deg, rgba(141, 194, 111, 1) 0%, rgba(118, 184, 82, 1) 50%); /* 渐变背景 */
+    font-family: "Roboto", sans-serif; /* 字体 */
+    -webkit-font-smoothing: antialiased; /* 优化字体平滑 */
+    -moz-osx-font-smoothing: grayscale; /* 优化字体平滑 */
+}

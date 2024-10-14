@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口设置，适应不同设备 -->
+    <title>Login and Register</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- 引入 jQuery 库 -->
+
+    <script>
+        $(document).ready(function() { // 文档加载完毕后执行
+            $('.message a').click(function() { // 绑定点击事件到消息中的链接
+                $('form').animate({height: "toggle", opacity: "toggle"}, "slow"); // 切换表单的高度和透明度
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="login-page"> <!-- 登录页面容器 -->
+        <div class="form"> <!-- 表单容器 -->
+            
+            <form class="register-form"> <!-- 注册表单 -->
+                <input type="text" placeholder="Name" required /> <!-- 姓名输入框 -->
+                <input type="password" placeholder="Password" required /> <!-- 密码输入框 -->
+                <input type="email" placeholder="Email Address" required /> <!-- 邮箱输入框 -->
+                <button type="submit">Create</button> <!-- 创建账户按钮 -->
+                <p class="message">Already registered? <a href="#">Sign In</a></p> <!-- 提示已注册用户的消息 -->
+            </form>
+
+            <form class="login-form"> <!-- 登录表单 -->
+                <input type="text" placeholder="Username" required /> <!-- 用户名输入框 -->
+                <input type="password" placeholder="Password" required /> <!-- 密码输入框 -->
+                <button type="submit">Login</button> <!-- 登录按钮 -->
+                <p class="message">Not registered? <a href="#">Create an account</a></p> <!-- 提示未注册用户的消息 -->
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
