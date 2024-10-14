@@ -16,7 +16,7 @@
    width: 100%;
    height: 400px;
    position: relative;
-   top: -408px; /*隐藏所有格子*/
+   top: 0px; /*隐藏所有格子*/
    border-collapse: collapse;
  }
  /* 行 */
