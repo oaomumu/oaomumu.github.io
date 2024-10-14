@@ -1,0 +1,58 @@
+/* css/index.css */
+
+body {
+    margin: 0; /* 去掉默认边距 */
+}
+
+.image-container {
+    text-align: center; /* 居中对齐 */
+    margin: 20px auto; /* 自动边距以确保容器居中 */
+    background-color: #f1f1f1; /* 设置背景颜色 */
+    padding: 15px; /* 添加内边距 */
+    border-radius: 8px; /* 可选：添加圆角 */
+}
+
+#myImage {
+    width: 80px; /* 设置宽度 */
+    height: 80px; /* 设置高度 */
+    display: block; /* 作为块级元素 */
+    margin: 0 auto; /* 确保图片居中 */
+    border-radius: 50%; /* 设置圆形边框 */
+    overflow: hidden; /* 隐藏多余部分 */
+}
+
+.image-caption {
+    display: block; /* 让文本成为块级元素 */
+    margin-top: 5px; /* 添加上边距 */
+    font-size: 14px; /* 字体大小 */
+    font-weight: bold; /* 设置字体加粗 */
+    color: #A52A2A; /* 文本颜色 */
+}
+
+.site-info {
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    text-align: center; /* 文本居中 */
+}
+
+.site-info p {
+    font-size: 16px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    margin: 10px 0; /* 段落间距 */
+}
+
+.footer {
+    background-color: #f1f1f1; /* 背景颜色 */
+    text-align: center; /* 文本居中 */
+    padding: 40px; /* 内边距 */
+    font-size: 12px; /* 字体大小 */
+}
+
+.footer a {
+    color: #8A2BE2; /* 链接颜色 */
+/*    text-decoration: none; /* 去掉下划线 */*/
+}
+
+.footer a:hover {
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
