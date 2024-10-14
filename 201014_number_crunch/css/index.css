@@ -1,0 +1,224 @@
+/* Importing the font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+header {
+    background-color: rgba(98, 0, 238, 0.9);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#start-game-button, #next-level-button {
+    background-color: #03dac6;
+    color: #000;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-game-button:hover, #next-level-button:hover {
+    background-color: #01a299;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Game Screen Styles */
+#game-screen main {
+    justify-content: space-between;
+    padding: 0;
+}
+
+.target-number, .input-area {
+    text-align: center;
+    padding: 20px;
+}
+
+.label {
+    font-size: 1em;
+    color: #666;
+}
+
+#target-number {
+    font-size: 3em;
+    color: #6200ee;
+    margin-top: 10px;
+}
+
+#calculation-display {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+    min-height: 40px;
+    word-wrap: break-word;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.buttons {
+    padding: 0 10px;
+}
+
+.number-pad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.number-button, .operator-button, .utility-button {
+    width: 22%;
+    background-color: #e0e0e0;
+    color: #000;
+    font-size: 1.5em;
+    margin: 1% 0;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s;
+}
+
+.number-button:active, .operator-button:active, .utility-button:active {
+    transform: scale(0.95);
+}
+
+.number-button.used {
+    background-color: #b0bec5;
+    color: #fff;
+}
+
+.controls {
+    padding: 20px;
+    text-align: center;
+}
+
+#submit-button {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.2em;
+    background-color: #03dac6;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#submit-button:active {
+    transform: scale(0.95);
+}
+
+.feedback {
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #6200ee;
+    min-height: 1.5em;
+}
+
+.feedback.show {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* End Screen Styles */
+#end-screen main p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Confetti Animation */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 20px;
+    background-color: red;
+    opacity: 0.9;
+    animation: confetti-fall 2s linear forwards, confetti-drift 2s ease-in-out forwards;
+}
+
+@keyframes confetti-fall {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(100vh); }
+}
+
+@keyframes confetti-drift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (min-width: 500px) {
+    #target-number {
+        font-size: 4em;
+    }
+
+    #calculation-display {
+        font-size: 2em;
+    }
+}
