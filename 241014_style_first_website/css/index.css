@@ -1,0 +1,157 @@
+/* ✨ You can edit this! ✨ */
+@import url('https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap');
+
+body {
+  background-color: ivory;
+  padding: 2rem;
+  font-family: sans-serif;
+  color: #633301;
+  line-height: 1.5;
+  max-inline-size: 60rem;
+  margin: auto;
+}
+
+h1 {
+  font-family: "Truculenta";
+  font-size: 3rem;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #633301;
+  
+  &:hover {
+    color: #963638;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+    position: relative;
+  }
+}
+
+dl {
+  margin-block: 2rem;
+  padding-block: 2rem 4rem;
+  position: relative;
+  
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    inline-size: 100%;
+    background-color: #633301;
+  }
+  
+  &::before {
+    top: 0;
+  }
+  
+  &::after {
+    bottom: 0;
+  }
+  
+  dd {
+    position: relative; 
+    max-inline-size: 60ch;
+  }
+  
+  @media (min-width: 700px) {
+    & > dt:first-child::after {
+      position: absolute;
+      content: "";
+      width: 9rem;
+      height: 4rem;
+      top: -4rem;
+      background-color: #2f839b;
+      left: calc(100% - 10rem);
+      z-index: 2;
+    }
+    
+    & > dt:nth-child(3)::after,
+    & > dt:nth-child(7)::after,
+    & > dt:nth-child(15)::after{
+      position: absolute;
+      content: "";
+      width: 8rem;
+      height: 2rem;
+      top: 0;
+      left: calc(100% - 8rem);
+      z-index: 2;
+    }
+    
+    & > dt:nth-child(3)::after {
+      background-color: #528a2a;
+    }
+    
+    & > dt:nth-child(7)::after {
+      background-color: #963638;
+      width: 9rem;
+      height: 5rem;
+    }
+    
+    & > dt:nth-child(15)::after {
+      background-color: #e26c0a;
+      width: 7rem;
+      height: 2rem;
+    }
+    
+    & > dd:last-child::after {
+      position: absolute;
+      content: "";
+      width: 8rem;
+      height: 4rem;
+      top: 3rem;
+      right: 3rem;
+      background-color: #daa601;
+      z-index: 2;
+    }
+  }
+  
+  // todo: offset the blocks more at large screens
+//   @media (min-width: 60rem) {
+//     & > dt:nth-child(3)::after {
+//       right: 3rem;
+//     }
+    
+//     & > dt:nth-child(7)::after {
+//       right: 20rem;
+//     }
+    
+//     & > dt:nth-child(15)::after {
+//       right: 7rem;
+//     }
+//   }
+}
+
+dt {
+  margin-inline-start: 2rem;
+  position: relative;
+  margin-block: 1rem 0.5rem;
+  font-family: "Truculenta";
+  letter-spacing: 0.02rem;
+  font-size: 1.25rem;
+  
+  &::before {
+    position: absolute;
+    content: "⚛";
+    left: -1.5rem;
+    top: -0.5rem;
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 700px) {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 20rem;
+      background-color: black;
+      top: -11rem;
+      right: 4rem;
+      z-index: 1;
+    }
+  }
+}
+

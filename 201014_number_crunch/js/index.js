@@ -1,4 +1,4 @@
-// script.js
+// index.js
 
 // Game variables
 let level = 1;
