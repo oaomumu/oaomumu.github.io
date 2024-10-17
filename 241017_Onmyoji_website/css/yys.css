@@ -1,0 +1,268 @@
+/*
+思路：
+大局观
+HTML写结构、css样式
+HTML先布局再写内容
+又外到内  */
+
+/*最外层的容器开始*/
+.yys{
+	width: 100%;
+	max-width: 1920px;
+	min-width: 1280px;
+}
+
+/*最外层的容器结束*/
+/*头部样式开始*/
+.header{
+	position: relative;
+	width: 100%;
+	height: 55px;
+	line-height: 55px;
+}
+
+.menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 179px;
+	height: 55px;
+	background-color: #cf1132;
+	font-size: 12px;
+	font-weight: 700;
+	color: #f3f3f3;
+}
+
+.sale{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 138px;
+	border-left: 1px solid #dadada;
+	font-size: 12px;
+	/*修改光标为小手	*/
+	cursor: pointer;
+}
+
+.sale:hover{
+	color: #bc2e2e;
+	border-bottom: 1px solid #bc2e2e;
+	background-color: #f3f3f3;
+}
+
+/*头部样式结束*/
+/*导航样式开始*/
+.nav{
+	/* 确保在其他元素之上 
+	并确保页面向下滚动时始终保持在顶部*/
+	z-index: 999;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background: url(../images/nav_back_bg_fd2505e.jpg) no-repeat center top;
+}
+
+.nav-wrap{
+	position: relative;
+	left: -15px;
+	margin: 0 auto;
+	width: 1180px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.nav-wrap li{
+	position: relative;
+	top: -3px;
+	float: left; /* 使列表项水平排列 */
+	width: 118px;
+	font-size: 15px;
+	font-weight: 700;
+	/*	400: 普通（常规）字体
+	700: 加粗字体
+	100, 200, 300: 轻体字体
+	900: 特别加粗字体*/
+
+}
+
+/*选择器用于选择不具有 nav-active 类的列表项
+并在其后生成一个伪元素。*/
+.nav-wrap li:not(.nav-active)::after{
+	position: absolute;
+	top: 30px;
+	right: 0;
+    content: ""; /* 生成一个空的伪元素 */
+    width: 1.6px; /* 伪元素的宽度为 1 像素 */
+    height: 12px; /* 伪元素的高度为 10 像素 */
+	background-color: #d4bf9a;
+
+}
+
+/*将伪元素的背景颜色设置为透明，使其在悬停时不显示任何背景色*/
+.nav-wrap li:hover::after {
+    content: "";
+    background-color: transparent;
+}
+
+.nav-wrap a{
+	color: #d4bf9a;
+}
+
+.nav-active{
+	background: url("../images/nav_bg1_d44f09d.jpg") no-repeat;
+}
+
+/*
+.nav-active:
+这是一个类选择器，选择所有带有 nav-active 类的元素。
+通常，这个类用于表示当前活动的导航项。
+.nav-active >a:
+这是一个子选择器，表示选择直接子元素。
+只有当 a 是 .nav-active 的直接子元素时，才会匹配。
+a:
+这是一个元素选择器，选择所有的 <a> 标签，通常用于链接。*/
+
+.nav-active > a {
+	color: #000;
+}
+
+.nav-wrap li:hover {
+    background: url("../images/nav_bg1_d44f09d.jpg") no-repeat;
+}
+
+.nav-wrap li:hover > a {
+    color: #000;
+}
+
+/*搜索图标*/
+.search{
+	/*相对于nav-wrap定位*/
+    position: absolute;
+    top: 25px;
+    right: -35px;
+    width: 18px;
+    height: 19px;
+    background: url("../images/search_b180dd5.png") no-repeat;
+    transition: all .3s;/* 当样式变化时，变化会平滑过渡*/
+
+}
+
+.search:hover {
+    transform: rotateY(180deg);/* 在 Y 轴上旋转 180 度 */
+}
+
+/*
+思路：
+①下拉列表绝对定位到显示的位置
+②display:none; 隐藏
+③鼠标悬停显示 display:block;
+*/
+.nav-list {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;/* 默认情况下隐藏*/
+    width: 100%;
+    height: 140px;
+    background: url("../images/subnav_bg_5cc9309.jpg") center 0 no-repeat;
+}
+
+.nav:hover > .nav-list {
+    display: block;
+}
+
+.nav-list img {
+    margin: 20px 10px 0;/* 上边距 左右边距 下边距*/
+}
+
+/*导航样式结束*/
+/*banner样式开始*/
+.banner{
+	position: relative;
+	top: -10px;
+	width: 100%;
+	height: 784px;
+}
+
+.banner-box{
+/* 隐藏图片溢出部分 */
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 784px;
+}
+
+.banner-box > img {
+/*    使图像在其父容器中居中对齐
+将图像的左边距设置为其父元素宽度的 50%
+用 transform 属性将图像向左移动其自身宽度的 50%*/
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 287px;
+    background: url("../images/bot_head_bg_450ba6b.png") repeat-x center bottom;
+}
+
+.banner-logo {
+    position: absolute;
+    left: 150px;
+    top: 143px;
+    width: 77px;
+    height: 228px;
+    background: url("../images/200.webp") no-repeat;
+    background-size: 100%;
+}
+
+.download{
+	position: relative;
+	width: 145px;
+	height: 240px;
+	padding-top: 47px;
+	background: url("../images/index_z_8ea32f7.png");
+}
+
+.download > img {
+	width: 107px;
+}
+
+.download > .line{
+    position: absolute;
+    top: 45px;
+    left: 12px;
+    width: 120px;
+/*  应用名为 move 的动画，持续 4 秒，线性过渡，无限循环*/
+    animation: move 4s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0); 
+        /* 起始位置，元素在原始位置 */
+    }
+    50% {
+        transform: translateY(100px); 
+        /* 中间位置，元素向下移动 100 像素 */
+    }
+    100% {
+        transform: translateY(0); 
+        /* 结束位置，元素回到原始位置 */
+    }
+}
+
+/*banner样式结束*/
+/*主体开始*/
+.wrap {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+/*主体结束*/
+/*平安世界样式开始*/

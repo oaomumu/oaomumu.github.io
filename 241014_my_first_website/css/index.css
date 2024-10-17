@@ -1,12 +1,15 @@
 /* css/index.css */
 
 body {
+    display: flex; /* 使用灵活布局 */
+    flex-direction: column; /* 垂直排列 */
+    min-height: 100vh; /* 最小高度为视口高度 */
     margin: 0; /* 去掉默认边距 */
 }
 
 .image-container {
     text-align: center; /* 居中对齐 */
-    margin: 20px auto; /* 自动边距以确保容器居中 */
+    margin: 0px ; 
     background-color: #f1f1f1; /* 设置背景颜色 */
     padding: 15px; /* 添加内边距 */
     border-radius: 8px; /* 可选：添加圆角 */
@@ -30,7 +33,12 @@ body {
 }
 
 .site-info {
-    padding: 20px; /* 内边距 */
+    max-width: 700px;
+    height: 350px; /* 设置高度 */
+    display: block; /* 作为块级元素 */
+    margin:30px auto;
+    padding: 15px; /* 内边距 */
+    line-height: 1.7;
     border-radius: 8px; /* 圆角 */
     text-align: center; /* 文本居中 */
 }
@@ -44,8 +52,9 @@ body {
 .footer {
     background-color: #f1f1f1; /* 背景颜色 */
     text-align: center; /* 文本居中 */
-    padding: 40px; /* 内边距 */
-    font-size: 12px; /* 字体大小 */
+    padding: 20px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    margin-top: auto; /* 自动边距以推送到底部 */
 }
 
 .footer a {
