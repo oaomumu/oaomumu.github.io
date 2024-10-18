@@ -262,7 +262,305 @@ a:
 .wrap {
     width: 1180px;
     margin: 0 auto;
+    margin-top: 120px;
 }
 
 /*主体结束*/
 /*平安世界样式开始*/
+.world{
+	position: relative;
+	width: 100%;
+	height: 495px;
+	/*设置元素底部的外边距为 70 像素*/
+	margin-bottom:90px ;
+	/*清除margin-top的影响*/
+    overflow: hidden;/* 隐藏溢出内容 */
+    margin-top: 43px;
+}
+
+.world-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 145px;
+    background: url("../images/index_z_8ea32f7.png");
+    background-position: -940px -532px;
+}
+
+.world-img {
+    width: 1180px;
+    height: 320px;
+    margin-top: 128px;
+    background: url("../images/shishen_bg_000bc91.jpg") no-repeat center top;
+}
+
+.big-img {
+    width: 940px;
+    height: 320px;
+    margin: 0 auto;
+}
+
+.big-img > a {
+    position: relative;
+    float: left;
+    width: 470px;
+    height: 320px;
+}
+
+.big-img img {
+    position: absolute;
+    top: -186px;
+    right: -140px;
+}
+
+.big-img .big-img-left {
+    position: relative;
+    left: -140px;
+}
+
+/*平安世界样式结束*/
+/*游戏攻略开始*/
+.game {
+    width: 100%;
+    height: 400px;
+    background: url("../images/stategy_bg_4def7a7.jpg") no-repeat;
+    background-position: 0 174px;
+}
+
+.game-tit {
+    float: left;
+    width: 55px;
+    height: 145px;
+    background: url("../images/index_z_8ea32f7.png");
+    background-position: -876px -532px;
+}
+
+.game-box {
+    float: right;
+    width: 1080px;
+    height: 209px;
+}
+
+.game-box > div {
+    position: relative;
+    float: left;
+    width: 340px;
+    height: 209px;
+    margin-left: 20px;
+}
+
+.game-box > div:hover span {
+	/*	向上移动 10 像素 */
+    transform: translateY(-10px);
+}
+
+.game-box span {
+    position: absolute;
+    width: 40px;
+    height: 90px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 2px solid #dadada; 
+    background: url("../images/stategy_tit_bg_3dfaee2.png");
+    color: #000;
+    font-size: 14px;
+	font-weight: 700;
+    line-height: 18px;
+    transition: all .4s;
+}
+
+.game-box span:first-of-type {
+    top: 0;
+    left: 18px;
+}
+
+.game-box span:last-of-type {
+    top: 22px;
+    left: 68px;
+}
+
+/*游戏攻略结束*/
+/*同人手账样式开始*/
+.tongren {
+    width: 100%;
+    height: 487px;
+    margin-bottom: 130px;
+    background: url("../images/tongren_bg_4e00ea2.jpg") no-repeat 0 bottom;
+}
+
+.tongren-tit {
+    float: left;
+    width: 53px;
+    height: 144px;
+    background: url("../images/index_z_8ea32f7.png");
+    background-position: -1003px -532px;
+}
+.tongren-box{
+    float: right;
+    width: 1062px;
+    height: 456px;
+}
+.tongren-box-left{
+    float: left;
+    width: 300px;
+    height: 456px;
+}
+.tongren-box-right{
+    float: right;
+    width: 720px;
+    height: 447px;
+}
+.tr-img{
+    width: 300px;
+    height: 415px;
+    margin-top: 41px;
+    background-image: url("../images/636343c1-1786-41f4-a666-bc70e648b7b3.png");
+    animation:change 6s linear infinite ;
+}
+@keyframes change {
+    0%{
+        background-image: url("../images/636343c1-1786-41f4-a666-bc70e648b7b3.png");
+    }
+    50%{
+        background-image: url("../images/1ecee501-bfd2-46b2-95fc-6cd88c63faa2.png");
+    }
+    100%{
+        background-image: url("../images/48a4f70a-058c-4cbf-84eb-27d09ed50f2a.jpg");
+    }
+
+}
+.tongren-box-right>div{
+    width: 220px;
+    height: 351px;
+    float: left;
+    margin-top: 40px;
+    margin-left: 20px;
+    background-image: url("../images/cdd1bfc5-5e41-49d9-9b57-1b89016aae74.jpg");
+    animation: change1 14s linear infinite;
+}
+@keyframes change1 {
+    0%{
+        background-image: url("../images/cdd1bfc5-5e41-49d9-9b57-1b89016aae74.jpg");
+    }
+    16%{
+        background-image: url("../images/9a1e3659-9eca-4c88-aa77-b276372718b6.jpg");
+    }
+    32%{
+        background-image: url("../images/cdd1bfc5-5e41-49d9-9b57-1b89016aae74.jpg");
+    }
+    48%{
+        background-image: url("../images/9a1e3659-9eca-4c88-aa77-b276372718b6.jpg");
+    }
+    64%{
+        background-image: url("../images/cdd1bfc5-5e41-49d9-9b57-1b89016aae74.jpg");
+    }
+    80%{
+        background-image: url("../images/9a1e3659-9eca-4c88-aa77-b276372718b6.jpg");
+    }
+    100%{
+        background-image: url("../images/cdd1bfc5-5e41-49d9-9b57-1b89016aae74.jpg");
+    }
+
+}
+
+/*同人手账样式结束*/
+/*试听盛宴样式开始*/
+.shiting {
+    width: 100%;
+    height: 262px;
+    padding-bottom: 47px;
+    margin-bottom: 30px;
+}
+
+.shiting-tit {
+    float: left;
+    width: 55px;
+    height: 146px;
+    background: url("../images/index_z_8ea32f7.png");
+    background-position: -812px -532px;
+}
+
+.st-box {
+    float: right;
+    width: 1090px;
+    height: 215px;
+    background: url("../images/shiting_bg_735f29c.jpg") no-repeat left 70px;
+}
+
+.st-box > div {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 141px;
+    background-color: gold;
+    margin-left: 20px;
+}
+
+.st-box > div:first-child {
+    margin-left: 30px;
+}
+
+.st-name {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    background-color: #000;
+    font-size: 15px;
+    letter-spacing: 2px; /* 设置字母间距 */
+    padding: 5px 10px;
+    color: #fff;
+}
+
+/*试听盛宴样式结束*/
+/*泛娱乐样式开始*/
+.fun {
+    width: 100%;
+    height: 516px;
+    margin-bottom: 70px;
+    background: url("../images/fun_bg_99effa1.jpg") no-repeat left 175px;
+}
+
+.fun-tit {
+    float: left;
+    width: 55px;
+    height: 140px;
+    background: url("../images/index_z_8ea32f7.png");
+    background-position: -1067px -532px;
+}
+
+.fun-box {
+    float: right;
+    width: 1060px;
+    height: 516px;
+}
+
+.fun_con {
+    position: relative;
+    width: 1060px;
+    height: 536px;
+    overflow: hidden;
+}
+
+.fun-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 2300px;
+    height: 516px;
+
+}
+
+.fun-container > div {
+    width: 220px;
+    height: 516px;
+    float: left;
+    margin-right: 10px;
+    transition: all .4s;
+}
+
+.fun-container > div:hover {
+    transform: translateY(-20px);
+}
+
+/*泛娱乐样式结束*/
