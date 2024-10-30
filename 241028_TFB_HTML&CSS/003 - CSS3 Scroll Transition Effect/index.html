@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 Transform Effects on Scroll</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <section>
+        <h1>
+            Be aware of all copycat youtubers!
+        </h1>
+        <span class="curve">
+            <img src="assets/images/curve.png" alt="">
+        </span>
+    </section>
+    <script type="text/javascript">
+
+// 动态缩放：结合之前的代码，window.scrollY / (-500) 用于计算缩放比例，使得随着页面向下滚动，value 逐渐减少。
+// 初始值为 1：由于表达式的结果是负数，最初的 value 为 1（当 scrollY 为 0 时），表示元素正常大小。
+// 减小效果：随着用户向下滚动，value 会逐渐减小，导致元素在 Y 轴上的缩放效果，从而实现“压扁”效果。
+
+        // 获取曲线元素
+        var scroll = document.querySelector('.curve');
+
+        // 添加滚动事件监听器
+        window.addEventListener('scroll', function() {
+            // 计算缩放值，根据滚动位置进行调整
+            var value = 1 + window.scrollY / (-500);
+            // 应用 CSS 变换，改变 Y 轴的缩放
+            scroll.style.transform = `scaleY(${value})`; // 使用反引号以支持模板字符串
+        })
+    </script>
+</body>
+</html>
+

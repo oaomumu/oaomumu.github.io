@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- 设置视口，使页面在移动设备上适应屏幕 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Moon Light Parallax Effects | Vanilla Javascript</title>
+	 <!-- 引入 Poppins 字体 -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<section>
+		<img src="assets/images/bg.jpg" id="bg">
+		<img src="assets/images/moon.png" id="moon">
+		<img src="assets/images/mountain.png" id="mountain">
+		<img src="assets/images/road.png" id="road">
+		<h2 id="text">Moon Light</h2>
+	</section>
+	
+	<script>
+		// 获取页面元素
+		let bg = document.getElementById("bg");
+		let moon = document.getElementById("moon");
+		let mountain = document.getElementById("mountain");
+		let road = document.getElementById("road");
+		let text = document.getElementById("text");
+
+		// 添加滚动事件监听器
+		window.addEventListener('scroll',function(){
+			var value = window.scrollY;// 获取当前滚动的垂直距离
+
+			// 根据滚动距离调整各元素的位置，以实现视差效果			
+			bg.style.top = value + 0.5 + 'px';
+			moon.style.left = -value + 0.5 + 'px';
+            mountain.style.top = -value * 0.15 + 'px';
+            road.style.top = value * 0.15 + 'px';
+            text.style.top = value * 1 + 'px';
+
+		})
+	</script>
+</body>
+</html>

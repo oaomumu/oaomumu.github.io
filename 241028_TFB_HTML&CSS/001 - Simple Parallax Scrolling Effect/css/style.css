@@ -1,0 +1,77 @@
+/* 使用 @import 和 <link> 的主要区别在于它们的加载方式和时机。
+   原因分析：
+   1. 加载顺序：
+      @import 会在 CSS 文件被解析时动态加载字体。这意味着如果 CSS 文件很大，可能会导致字体加载延迟。
+      <link> 标签则是在 HTML 解析时直接请求资源，通常会更快加载。
+   2. 浏览器兼容性：
+      有些浏览器可能对 @import 的支持不如 <link> 稳定，尤其是在复杂的样式表中。
+   3. 性能因素：
+      使用 <link> 标签可以更好地利用浏览器的并行请求能力，减少页面加载时间。
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* 设置全局字体为 Poppins，后备字体为 sans-serif */
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0a2a43;
+    min-height: 1500px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 水平居中对齐子元素 */
+    align-items: center; /* 垂直居中对齐子元素 */
+}
+
+/* 在 section 底部添加渐变背景 */
+section::before {
+    content: ''; /* 生成一个空的伪元素 */
+    position: absolute; /* 绝对定位，覆盖在 section 元素上 */
+    bottom: 0; /* 靠底部对齐 */
+    width: 100%; /* 宽度为100% */
+    height: 100px; /* 高度设置为100px */
+    background: linear-gradient(to top, #0a2a43, transparent); /* 渐变背景，从深色到透明 */
+    z-index: 10000; /* 设置层级，以确保在其他元素之上 */
+}
+
+/* 在 section 上方添加覆盖层 */
+section::after {
+    content: ''; /* 生成一个空的伪元素 */
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 靠顶部对齐 */
+    left: 0; /* 靠左边对齐 */
+    width: 100%; /* 宽度为100% */
+    height: 100%; /* 高度为100% */
+    background: #0a2a43; /* 背景颜色 */
+    mix-blend-mode: color; /* 设置混合模式为颜色混合 */
+    z-index: 10000; /* 设置层级，以确保在其他元素之上 */
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* 禁用图像的鼠标事件 */
+}
+
+#text {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 1;
+}
+
+#road {
+    z-index: 2;
+}

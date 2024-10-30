@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#menu-overlay{
+    /* 
+        上下作用的fixed元素坐标均设置为0，如果width和height均为auto，
+        则会使得该元素自动拉伸，覆盖整个父元素(body)
+    */
+    position: fixed; /* 固定定位，使其覆盖整个视口 */
+    top: 0; /* 顶部对齐 */
+    right: 0; /* 右侧对齐 */
+    bottom: 0; /* 底部对齐 */
+    left: 0; /* 左侧对齐 */
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* 允许纵向滚动 */
+    transform: scale(0); /* 初始缩放为0，隐藏元素 */
+    transition: 0.5s; /* 变换和过渡效果 */
+}
+
+/* 激活状态样式 */
+#menu-overlay.active {
+    transform: scale(1); /* 激活时缩放为1，显示元素 */
+
+}/* 菜单项样式 */
+#menu-overlay ul li {
+    list-style: none; /* 去除列表样式 */
+    text-align: center; 
+}
+
+/* 菜单链接样式 */
+#menu-overlay ul li a {
+    position: relative; /* 相对定位以支持伪元素 */
+    display: inline-block; /* 使链接成为块级元素 */
+    text-decoration: none; /* 去掉下划线 */
+    font-size: 4em; 
+    color: #fff;
+    font-weight: 700; /* 粗体 */
+    text-transform: uppercase; /* 字母大写 */
+}
+
+/* 伪元素样式 */
+#menu-overlay ul li a::before {
+    content: ''; /* 生成一个空内容 */
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    width: 100%; 
+    height: 8px;
+    background: #ff0;
+    transform: translateY(-50%) scaleX(0); /* 初始缩放为0，隐藏 */
+    transform-origin: right; /* 变换原点为右侧 */
+    transition: transform 0.5s; /* 变换过渡效果 */
+}
+
+/* 鼠标悬停效果 */
+#menu-overlay ul li a:hover::before {
+    transform: translateY(-50%) scaleX(1); /* 悬停时缩放为1，显示 */
+    transform-origin: left; /* 变换原点为左侧 */
+    transition: transform 0.5s; /* 变换过渡效果 */
+}
+
+/* 切换图标样式 */
+#toggle-icon {
+    position: fixed; /* 固定定位 */
+    top: 20px; /* 距离顶部20像素 */
+    right: 20px; /* 距离右侧20像素 */
+    width: 50px; /* 宽度50像素 */
+    height: 50px; /* 高度50像素 */
+    background: #ff0 url("../assets/images/open.png") no-repeat; /* 背景为黄色和打开图标 */
+    z-index: 1; /* 确保在其他元素之上 */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+/* 切换图标激活状态样式 */
+#toggle-icon.active {
+    background-image: url("../assets/images/close.png"); /* 激活时显示关闭图标 */
+}
